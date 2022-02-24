@@ -1,6 +1,6 @@
 const { Board, Led } = require("johnny-five");
 const board = new Board({port:"COM3"});
-board.on("ready", () => {
-  const led = new Led(13); // 13th PIN
-  led.blink(1000); // 1000 ms
+board.on("ready", async () => {
+  new Led(6).strobe(1000);
+  new Led(5).pulse(500);
 });
